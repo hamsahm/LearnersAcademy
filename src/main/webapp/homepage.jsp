@@ -10,7 +10,7 @@
 	<h2>List of Menu </h2>
 	
 	<a href="" >Get Classes</a> <br/> <br/>
-	<a href="" >Get Subjects</a> <br/> <br/>
+	<a href="subjects" >Get Subjects</a> <br/> <br/>
 	<a href="" >Get Teachers</a> <br/>  <br/>
 	<a href="" >Get Students</a> <br/>  <br/>
 	<a href="" >Get Class Information</a> <br/>  <br/>
