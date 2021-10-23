@@ -11,7 +11,7 @@
 	
 	<a href="" >Get Classes</a> <br/> <br/>
 	<a href="subjects" >Get Subjects</a> <br/> <br/>
-	<a href="" >Get Teachers</a> <br/>  <br/>
+	<a href="teachers" >Get Teachers</a> <br/>  <br/>
 	<a href="" >Get Students</a> <br/>  <br/>
 	<a href="" >Get Class Information</a> <br/>  <br/>
 </body>
