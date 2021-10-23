@@ -14,11 +14,13 @@
 		<!-- 	 <tr>
       <th COLSPAN="3">SUBJECT DETAILS</th>
    </tr> -->
+   <thead>
 		<tr>
 			<th>Subject Id</th>
 			<th>Subject Name</th>
 			<th>Subject Code</th>
 		</tr>
+		 </thead>
 		<c:forEach var="subject" items='${sessionScope.subjects}'>
 
 			<tr>
@@ -30,5 +32,9 @@
 
 
 	</table>
+	
+	<br/>
+	<br/>
+	<a href="homepage.jsp">Back To Home Page</a>
 </body>
 </html>
