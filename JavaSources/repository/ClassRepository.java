@@ -8,11 +8,12 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import model.Teachers;
 
-public class TeacherRepository {
-	Session session;
+import model.Classes;
 
+public class ClassRepository {
+Session session;
+	
 	public void initializeConnection() {
 		StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder()
 				.configure("hibernates.cfg.xml").build();
@@ -21,14 +22,15 @@ public class TeacherRepository {
 		this.session = sessionFactory.openSession();
 		System.out.println("Hibernate Session opened!");
 	}
+	
+	public List<Classes> retrieveClassDetails() {
 
-	public List<Teachers> retrieveTeacherDetails() {
-
-		String hibernateQuery = "select s from Teachers s";
-		List<Teachers> teachers = session.createQuery(hibernateQuery, Teachers.class).getResultList();
-
-		return teachers;
+		String hibernateQuery = "select c from Classes c";
+		List<Classes> classes = session.createQuery(hibernateQuery, Classes.class).getResultList();
+		
+		return classes;
 	}
+	
 
 	public void closeSession() {
 		System.out.println("Hibernate Session closed!");

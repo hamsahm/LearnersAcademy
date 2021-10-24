@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Subjects;
-import service.SubjectsService;
+import model.Classes;
+import service.ClassesService;
 
 /**
- * Servlet implementation class SubjectController
+ * Servlet implementation class ClassController
  */
-public class SubjectController extends HttpServlet {
+public class ClassController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SubjectController() {
+	public ClassController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,12 +32,13 @@ public class SubjectController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		SubjectsService subjectService = new SubjectsService();
 
-		List<Subjects> subjects = subjectService.retrieveListOfSubjects();
-		request.getSession().setAttribute("subjects", subjects);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("viewSubjects.jsp");
+		ClassesService classesService = new ClassesService();
+
+		List<Classes> classes = classesService.retrieveListOfClasses();
+		request.getSession().setAttribute("classes", classes);
+
+		RequestDispatcher rd = request.getRequestDispatcher("viewClasses.jsp");
 		rd.forward(request, response);
 
 	}
@@ -48,6 +49,7 @@ public class SubjectController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

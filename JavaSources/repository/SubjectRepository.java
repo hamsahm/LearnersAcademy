@@ -12,9 +12,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import model.Subjects;
 
 public class SubjectRepository {
-	
+
 	Session session;
-	
+
 	public void initializeConnection() {
 		StandardServiceRegistry standardServiceRegistry = new StandardServiceRegistryBuilder()
 				.configure("hibernates.cfg.xml").build();
@@ -23,15 +23,14 @@ public class SubjectRepository {
 		this.session = sessionFactory.openSession();
 		System.out.println("Hibernate Session opened!");
 	}
-	
+
 	public List<Subjects> retrieveSubjectDetails() {
 
 		String hibernateQuery = "select s from Subjects s";
 		List<Subjects> subjects = session.createQuery(hibernateQuery, Subjects.class).getResultList();
-		
+
 		return subjects;
 	}
-	
 
 	public void closeSession() {
 		System.out.println("Hibernate Session closed!");

@@ -15,7 +15,7 @@
 		
 		<mapping class="model.Subjects"/>
 		<mapping class="model.Teachers"/>
+		<mapping class="model.Classes"/>
 	
-		
 	</session-factory>
 </hibernate-configuration>
