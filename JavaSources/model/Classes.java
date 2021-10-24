@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +37,19 @@ public class Classes {
 					@JoinColumn(name = "subject_id", nullable = false, updatable = false) })
 	@ElementCollection(targetClass = Subjects.class)
 	private Set<Subjects> subjects = new HashSet<Subjects>();
+	
+	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "students")
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	private Set<Students> students = new HashSet<Students>();
+	
+	public Set<Students> getStudents() {
+		return this.students;
+	}
+
+	public void setStudents(Set<Students> students) {
+		this.students = students;
+	}
 
 	public long getClassId() {
 		return classId;

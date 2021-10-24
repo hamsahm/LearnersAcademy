@@ -22,12 +22,19 @@
   	<description></description>
   	<servlet-class>controller.LoginServlet</servlet-class>
   </servlet>
+    <servlet>
+  	<servlet-name>StudentController</servlet-name>
+  	<display-name>StudentController</display-name>
+  	<description></description>
+  	<servlet-class>controller.StudentController</servlet-class>
+  </servlet>
   <servlet>
   	<servlet-name>ClassController</servlet-name>
   	<display-name>ClassController</display-name>
   	<description></description>
   	<servlet-class>controller.ClassController</servlet-class>
   </servlet>
+
 
 	 <servlet-mapping>
   	<servlet-name>SubjectController</servlet-name>
@@ -44,5 +51,9 @@
   <servlet-mapping>
   	<servlet-name>ClassController</servlet-name>
   	<url-pattern>/classes</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StudentController</servlet-name>
+  	<url-pattern>/students</url-pattern>
   </servlet-mapping>
 </web-app>
