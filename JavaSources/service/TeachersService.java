@@ -10,10 +10,7 @@ public class TeachersService {
 	public List<Teachers> retrieveListOfSubjects() {
 		TeacherRepository teacherRepo = new TeacherRepository();
 
-		teacherRepo.initializeConnection();
 		List<Teachers> teachers = teacherRepo.retrieveTeacherDetails();
-
-		teacherRepo.closeSession();
 
 		return teachers;
 	}

@@ -10,10 +10,7 @@ public class ClassesService {
 	public List<Classes> retrieveListOfClasses() {
 		ClassRepository classRepo = new ClassRepository();
 
-		classRepo.initializeConnection();
 		List<Classes> classes = classRepo.retrieveClassDetails();
-
-		classRepo.closeSession();
 
 		return classes;
 	}

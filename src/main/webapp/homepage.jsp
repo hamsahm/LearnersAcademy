@@ -11,10 +11,11 @@
 	<h4>List of Menu </h4>
 	<div>
 	
-	<a href="classes" >Get Classes</a> <br/> <br/>
-	<a href="subjects" >Get Subjects</a> <br/> <br/>
-	<a href="teachers" >Get Teachers</a> <br/>  <br/>
-	<a href="students" >Get Students</a> <br/>  <br/>	
+	<a href="classes?type=classes" >View Classes</a> <br/> <br/>
+	<a href="subjects" >View Subjects</a> <br/> <br/>
+	<a href="teachers" >View Teachers</a> <br/>  <br/>
+	<a href="students" >View Students</a> <br/>  <br/>	
+	<a href="classes?type=viewReport">View Class Detailed Reports</a> <br/><br/>
 	</div>
 	<a href="logout.jsp" >Logout</a>
 </body>

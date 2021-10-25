@@ -35,7 +35,6 @@
   	<servlet-class>controller.ClassController</servlet-class>
   </servlet>
 
-
 	 <servlet-mapping>
   	<servlet-name>SubjectController</servlet-name>
   	<url-pattern>/subjects</url-pattern>

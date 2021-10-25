@@ -37,8 +37,19 @@ public class ClassController extends HttpServlet {
 
 		List<Classes> classes = classesService.retrieveListOfClasses();
 		request.getSession().setAttribute("classes", classes);
+		
+		String classType = request.getParameter("type");
+		
+		System.out.println("classes inside controller "+classType);
 
-		RequestDispatcher rd = request.getRequestDispatcher("viewClasses.jsp");
+		RequestDispatcher rd = null;
+		if(classType.equals("classes")) {
+			rd = request.getRequestDispatcher("viewClasses.jsp");
+		}
+		else if(classType.equals("viewReport")) {
+			rd = request.getRequestDispatcher("viewClassReports.jsp");
+		}
+
 		rd.forward(request, response);
 
 	}

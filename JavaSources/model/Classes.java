@@ -37,12 +37,29 @@ public class Classes {
 					@JoinColumn(name = "subject_id", nullable = false, updatable = false) })
 	@ElementCollection(targetClass = Subjects.class)
 	private Set<Subjects> subjects = new HashSet<Subjects>();
-	
-	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "students")
-	
+		
 	@OneToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "students_classes", joinColumns = {
+			@JoinColumn(name = "class_id", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "student_id", nullable = false, updatable = false) })
+	@ElementCollection(targetClass = Students.class)
 	private Set<Students> students = new HashSet<Students>();
 	
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "teachers_classes", joinColumns = {
+			@JoinColumn(name = "class_id", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "teacher_id", nullable = false, updatable = false) })
+	@ElementCollection(targetClass = Teachers.class)
+	private Set<Teachers> teachers = new HashSet<Teachers>();
+	
+	public Set<Teachers> getTeachers() {
+		return teachers;
+	}
+
+	public void setTeachers(Set<Teachers> teachers) {
+		this.teachers = teachers;
+	}
+
 	public Set<Students> getStudents() {
 		return this.students;
 	}
@@ -81,12 +98,6 @@ public class Classes {
 
 	public Set<Subjects> getSubjects() {
 		return this.subjects;
-	}
-
-	@Override
-	public String toString() {
-		System.out.println("inside to string of classes" + subjects.toString());
-		return "Classes [classId=" + classId + ", className=" + className + ", section=" + section + "]";
 	}
 
 }

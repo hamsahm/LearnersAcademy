@@ -10,10 +10,7 @@ public class SubjectsService {
 	public List<Subjects> retrieveListOfSubjects() {
 		SubjectRepository subjectRepo = new SubjectRepository();
 
-		subjectRepo.initializeConnection();
 		List<Subjects> subjects = subjectRepo.retrieveSubjectDetails();
-
-		subjectRepo.closeSession();
 
 		return subjects;
 	}

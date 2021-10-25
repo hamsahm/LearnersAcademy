@@ -10,10 +10,7 @@ public class StudentsService {
 	public List<Students> retrieveListOfStudents() {
 		StudentRepository studentRepo = new StudentRepository();
 
-		studentRepo.initializeConnection();
 		List<Students> students = studentRepo.retrieveStudentsDetails();
-
-		studentRepo.closeSession();
 
 		return students;
 	}
