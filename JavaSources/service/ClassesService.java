@@ -8,6 +8,7 @@ import repository.ClassRepository;
 public class ClassesService {
 
 	public List<Classes> retrieveListOfClasses() {
+		
 		ClassRepository classRepo = new ClassRepository();
 
 		List<Classes> classes = classRepo.retrieveClassDetails();

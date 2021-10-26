@@ -37,8 +37,7 @@ public class Subjects {
 					@JoinColumn(name = "class_id", nullable = false, updatable = false) })
 	@ElementCollection(targetClass = Classes.class)
 	private Set<Classes> classes = new HashSet<Classes>();
-	
-	
+
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "teachers_subjects", joinColumns = {
 			@JoinColumn(name = "subject_id", nullable = false, updatable = false) }, inverseJoinColumns = {
@@ -65,17 +64,13 @@ public class Subjects {
 	public long getSubjectId() {
 		return subjectId;
 	}
-
 	public void setSubjectId(long subjectId) {
 		this.subjectId = subjectId;
 	}
-
 	public String getSubjectName() {
 		return subjectName;
 	}
-
 	public void setSubjectName(String subjectName) {
 		this.subjectName = subjectName;
 	}
-
 }

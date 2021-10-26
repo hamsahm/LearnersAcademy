@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Subject Details</title>
 </head>
 <body>
 	<h3>Subject Details</h3>
@@ -20,14 +20,12 @@
 			</tr>
 		</thead>
 		<c:forEach var="subject" items='${sessionScope.subjects}'>
-
 			<tr>
 				<td><c:out value="${subject.subjectId}" /></td>
 				<td><c:out value="${subject.subjectName}" /></td>
 				<td><c:out value="${subject.subjectCode}" /></td>
 				<td>
 					<table border=3>
-
 						<thead>
 							<tr>
 								<th>Class Name</th>
@@ -38,20 +36,13 @@
 							<tr>
 								<td><c:out value="${classDetails.className}" /></td>
 								<td><c:out value="${classDetails.section}" /></td>
-
 							</tr>
-
 						</c:forEach>
 					</table>
 				</td>
 			</tr>
 		</c:forEach>
-
-
-	</table>
-
-	<br />
-	<br />
+	</table><br /><br />
 	<a href="homepage.jsp">Back To Home Page</a>
 </body>
 </html>

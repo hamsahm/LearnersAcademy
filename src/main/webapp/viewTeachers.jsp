@@ -6,14 +6,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Teacher Details</title>
 </head>
 <body>
 	<h3>Teacher Details</h3>
 	<table border=5>
-		<!-- 	 <tr>
-      <th COLSPAN="3">SUBJECT DETAILS</th>
-   </tr> -->
 		<tr>
 			<th>Teacher Id</th>
 			<th>First Name</th>
@@ -21,7 +18,6 @@
 			<th>Age</th>
 		</tr>
 		<c:forEach var="teachers" items='${sessionScope.teachers}'>
-
 			<tr>
 				<td><c:out value="${teachers.teacherId}" /></td>
 				<td><c:out value="${teachers.firstName}" /></td>
@@ -29,10 +25,7 @@
 				<td><c:out value="${teachers.age}" /></td>
 			</tr>
 		</c:forEach>
-
-
 	</table>
-	
 <br/>	
 <br/>
 <a href="homepage.jsp">Back To Home Page</a>
